@@ -50,6 +50,18 @@ nodejs_setup(){
     VALIDATE $? "Installing Application Dependencies"    # Validate the last command
 }
 
+java_setup(){
+    dnf install maven -y &>>$LOG_FILE # Install Maven
+    VALIDATE $? "Installing Maven"    # Validate the last command
+
+    mvn clean package  &>>$LOG_FILE # Build the application code
+    VALIDATE $? "Building shipping Application Code"    # Validate the last command
+
+    mv target/shipping-1.0.jar shipping.jar  &>>$LOG_FILE # Rename the jar file
+    VALIDATE $? "Renaming shipping Application Code"    # Validate the last command
+
+}
+
 app_setup(){
 
     id roboshop &>>LOG_FILE # Check if the user already exists
