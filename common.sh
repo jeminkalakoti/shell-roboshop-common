@@ -12,6 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # Define log file path
 START_TIME=$(date +%s) # Get the script start time
 SCRIPT_DIR=$PWD # Get the current working directory
 MONGODB_HOST=mongodb.kalakoti.fun # MongoDB Host
+MYSQL_HOST="mysql.kalakoti.fun" # MySQL Host
 
 
 # -e enables the interpretation of backslash escapes
@@ -68,7 +69,7 @@ python_setup(){
 
     pip3 install -r requirements.txt &>>$LOG_FILE # Install the application dependencies
     VALIDATE $? "Installing Application Dependencies"    # Validate the last command
-    
+
 }
 
 app_setup(){
