@@ -64,10 +64,10 @@ java_setup(){
 }
 
 python_setup(){
-    dnf install python3 gcc python3-devel -y &>>$LOG_FILE # Install Python3
-    VALIDATE $? "Installing Python3"   # Validate the last command
-    pip3 install -r requirements.txt &>>$LOG_FILE # Download the application dependencies
-    VALIDATE $? "Installing dependencies"   # Validate the last command
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Installing Python3"
+    pip3 install -r requirements.txt &>>$LOG_FILE
+    VALIDATE $? "Installing dependencies"
 }
 
 app_setup(){
