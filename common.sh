@@ -62,6 +62,15 @@ java_setup(){
 
 }
 
+python_setup(){
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE # Install Python3 and dependencies
+    VALIDATE $? "Installing Python3"    # Validate the last command
+
+    pip3 install -r requirements.txt &>>$LOG_FILE # Install the application dependencies
+    VALIDATE $? "Installing Application Dependencies"    # Validate the last command
+    
+}
+
 app_setup(){
 
     id roboshop &>>LOG_FILE # Check if the user already exists
