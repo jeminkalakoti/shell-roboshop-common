@@ -5,7 +5,7 @@ app_name=user # Define the application name
 
 check_root
 app_setup  # Call the app setup function from common.sh
-java_setup_setup # Call the NodeJS setup function from common.sh
+java_setup # Call the NodeJS setup function from common.sh
 systemd_setup # Call the systemd setup function from common.sh
 
 dnf install mysql -y &>>$LOG_FILE # Install MySQL Client
