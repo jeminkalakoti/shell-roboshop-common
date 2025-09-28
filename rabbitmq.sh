@@ -16,8 +16,6 @@ systemctl start rabbitmq-server &>>$LOG_FILE # Start RabbitMQ service
 VALIDATE $? "Starting RabbitMQ"    # Validate the last command
 
 rabbitmqctl add_user roboshop roboshop123 &>>$LOG_FILE # Add application user
-VALIDATE $? "Adding Application User to RabbitMQ"    # Validate the last command
-
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$LOG_FILE # Set permissions to the application user
 VALIDATE $? "Setting Permissions to Application User"    # Validate the last command
 
