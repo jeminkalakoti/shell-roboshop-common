@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 source ./common.sh # Source the common.sh file to use its functions
 app_name=shipping # Define the application name
